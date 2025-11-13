@@ -24,7 +24,7 @@ Java_com_example_edgedetector_JNIBridge_createProcessor(JNIEnv *env, jclass claz
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_example_edgedetector_JNIBridge_destroyProcessor(JNIEnv *env, jclass clazz, jlong native_processor_address) {
+Java_com_example_app_JNIBridge_destroyProcessor(JNIEnv *env, jclass clazz, jlong native_processor_address) {
 
     EdgeProcessor *processor = (EdgeProcessor *) native_processor_address;
     delete processor;
@@ -32,7 +32,7 @@ Java_com_example_edgedetector_JNIBridge_destroyProcessor(JNIEnv *env, jclass cla
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_example_edgedetector_JNIBridge_processFrame(JNIEnv *env, jclass clazz,
+Java_com_example_app_JNIBridge_processFrame(JNIEnv *env, jclass clazz,
                                                      jlong native_processor_address,
                                                      jint width, jint height,
                                                      jobject y_buffer, jobject u_buffer, jobject v_buffer,
